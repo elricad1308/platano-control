@@ -5,12 +5,15 @@ const app = express()
 const net = spawn('./net/NetApp/bin/Debug/NetApp.exe')
 
 app.get('/', (req, res) => {
-  const move = req.query.move
-  const jump = req.query.jump
-  const accel = req.query.accel
+  const game = req.query.game
+  const x = req.query.x
+  const y = req.query.y
+  const a = req.query.a
+  const b = req.query.b
+  const start = req.query.start
 
-  net.stdin.write(`${move},${jump},${accel}\r\n`)
-
+  net.stdin.write(`${game},${x},${y},${a},${b},${start}\r\n`)
+  
   res.status(200).send('ok')
 })
 

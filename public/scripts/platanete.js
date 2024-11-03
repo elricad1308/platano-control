@@ -1,3 +1,15 @@
+/**
+ * platanete.js
+ * 
+ * Esta clase define un 'platanete', es decir, un objeto
+ * detectable por el programa.
+ * 
+ * Los platanetes son conjuntos de pixeles de color similar
+ * que se agrupan en esta estructura de datos. 
+ * 
+ * Se llama 'platanete' porque, originalmente, se diseñó para
+ * detectar plátanos.
+ */
 class Platanete {
 
   grados = 0
@@ -7,6 +19,8 @@ class Platanete {
   width = 0
   height = 0
 
+  xCentro = 0
+  yCentro = 0
   xMinima = 0
   yMinima = 0
   xMaxima = 0
@@ -34,6 +48,9 @@ class Platanete {
 
     this.width = this.xMaxima - this.xMinima
     this.height = this.yMaxima - this.yMinima
+
+    this.xCentro = this.xMinima + (this.width / 2)
+    this.yCentro = this.yMinima + (this.height / 2)
   }
 
   dibujar (ctx) {
@@ -46,12 +63,9 @@ class Platanete {
     ctx.rect(x, y, this.width, this.height)
     ctx.stroke()
 
-    let centroX = x + (this.width / 2)
-    let centroY = y + (this.height / 2)
-
     ctx.beginPath()
     ctx.fillStyle = '#00f'
-    ctx.arc(centroX, centroY, 5, 0, 2 * Math.PI)
+    ctx.arc(this.xCentro, this.yCentro, 5, 0, 2 * Math.PI)
     ctx.fill()
 
     let sumaYIzq = 0

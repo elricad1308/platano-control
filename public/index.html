@@ -8,39 +8,176 @@
   <body>
     <div class="container">
 
-      <div class="row text-center">
-        <div class="col-12">
-          <h1 class="mt-3">Plátano control</h1>
+      <div class="row text-center border">
+        <div class="col-6">
+          <h1 class="mt-3">🐊 Koko control 🐊</h1>
         </div> <!-- .col -->
       </div> <!-- .row -->
 
       <div class="row">
+
         <div class="col-12 col-md-6">
           <video id="video" playsinline autoplay></video>
           <canvas id="canvas" width="475" height="475"></canvas>
+
+          <div class="row">
+            <div class="col-12">
+              <span id="spn-sensibilidad">Sensibilidad: 1.9x, 1.9y</span>
+              <p id="p-angulo">Ángulo: </p>
+              <p id="p-comando">Comando: NINGUNO</p>
+            </div>
+          </div>
         </div>
+
         <div class="col-12 col-md-6">
+
           <div id="carrito-div">
             <img id="carrito" src="images/car.png">
           </div>
-          <div id="info" class="text-center mt-5 pt-3">
+
+          <div id="info" class="text-center pt-3">
+
+            <div class="form-check form-check-inline">
+              <input 
+                name="rad-color"
+                type="radio" 
+                class="form-check-input"
+                value="yellow"
+                id="rad-color--yellow"
+                checked>
+              <label 
+                class="form-check-label"
+                for="rad-color--yellow">
+                <span class="span-color span-color--yellow"></span>
+                Amarillo
+              </label>
+            </div> <!-- .form-check -->
+
+            <div class="form-check form-check-inline">
+              <input 
+                name="rad-color"
+                type="radio" 
+                class="form-check-input"
+                value="green"
+                id="rad-color--green">
+              <label 
+                class="form-check-label"
+                for="rad-color--green">
+                <span class="span-color span-color--green"></span>
+                Verde
+              </label>
+            </div> <!-- .form-check -->
+
+            <div class="form-check form-check-inline">
+              <input 
+                name="rad-color"
+                type="radio" 
+                class="form-check-input"
+                value="blue"
+                id="rad-color--blue">
+              <label 
+                class="form-check-label"
+                for="rad-color--blue">
+                <span class="span-color span-color--blue"></span>
+                Azul
+              </label>
+            </div> <!-- .form-check -->
+
+            <div class="form-check form-check-inline">
+              <input 
+                name="rad-color"
+                type="radio" 
+                class="form-check-input"
+                value="red"
+                id="rad-color--red">
+              <label 
+                class="form-check-label"
+                for="rad-color--red">
+                <span class="span-color span-color--red"></span>
+                Rojo
+              </label>
+            </div> <!-- .form-check -->
+
+            <hr>
+
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">Juego:</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input 
+                type="radio" 
+                class="form-check-input"
+                name="rad-game"
+                value="world"
+                id="rad-game--world">
+              <label for="rad-game--world" class="form-check-label">
+                Super Mario World
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input 
+                type="radio" 
+                id="rad-game--kart" 
+                class="form-check-input"
+                name="rad-game"
+                value="kart">
+              <label for="rad-game--kart" class="form-check-label">
+                Mario Kart
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input 
+                type="radio"
+                id="rad-game--fox"
+                class="form-check-input"
+                name="rad-game"
+                value="fox">
+              <label for="rad-game--fox" class="form-check-label">
+                Star Fox
+              </label>
+            </div>
+
+            <hr>
+
+            <label 
+              for="inp-sensibilidad-y" 
+              class="form-label">
+              Sensibilidad vertical:
+            </label>
             <input 
+              class="form-range"
               type="range" 
-              id="inp-sensibilidad"
+              id="inp-sensibilidad-y"
               min="1000"
               val="1900"
               max="5000">
+
+            <label 
+              for="inp-sensibilidad-x" 
+              class="form-label">
+              Sensibilidad horizontal
+            </label>
+            <input
+              class="form-range"
+              type="range"
+              id="inp-sensibilidad-x"
+              min="1000"
+              val="1900"
+              max="5000">
+
             <div class="form-check">
               <input id="inp-invertido" type="checkbox" class="form-check-input">
               <label for="inp-invertido" class="form-check-label">
                 Invertir controles
               </label>
             </div>
-            <span id="spn-sensibilidad">Sensibilidad: 1.9</span>
-            <p id="p-angulo">Ángulo: </p>
-            <p id="p-comando">Comando: NINGUNO</p>
-          </div>
-        </div> <!-- .row -->
+            
+          </div> <!-- #info -->
+
+        </div> <!-- .col -->
       </div> <!-- .row -->
 
     </div> <!-- .container -->
